@@ -1,5 +1,10 @@
 #python 3.7 (f-strings're using)
-# This code online-demo: https://repl.it/repls/FriendlyEnlightenedSpools
+# This code online-demo: https://repl.it/repls/QuarrelsomeStaidGlobalarrays
+
+import doctest
+
+_test = True
+_demo = True
 
 N_LETTERS = 26
 
@@ -8,12 +13,26 @@ def num_to_excel_сode(number):
     """Getting Excel-style code from number
     :param number: number for coding
     :return: srting with Excel-style code
+
+    >>> num_to_excel_сode(2)
+    'B'
+
+    >>> num_to_excel_сode(28)
+    'AB'
+
     """
 
     def get_letter_by_code(n):
         """Getting letter by number code
         :param n: number code
         :return: str (1 symbol)
+
+        >>> get_letter_by_code(1)
+        'A'
+
+        >>> get_letter_by_code(26)
+        'Z'
+
         """
         if n >= -2:
             return chr(ord('A') + n)
@@ -61,5 +80,8 @@ def demo():
     for i in range(1, 5):
         demo_case(-1 + power(N_LETTERS, i), nr)
 
+if _test:
+    doctest.testmod()
 
-demo()
+if _demo:
+    demo()
